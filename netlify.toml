@@ -1,0 +1,5 @@
+# Netlify 配置：本站是纯静态站，没有构建步骤。
+# 有了这个文件，Netlify 在后台「连仓库」时会自动预填设置，
+# 不会因为 Publish directory 填错（如 dist / public）而部署失败。
+[build]
+  publish = "."
