@@ -10,3 +10,15 @@
 
 # 平台早期预览地址兜底
 /home      /               301!
+
+# 内容页：同样把无后缀版本 301 到 .html，避免重复 URL
+/pricing  /pricing.html  301!
+/service-areas  /service-areas.html  301!
+/blog  /blog.html  301!
+/plumber-tianhe  /plumber-tianhe.html  301!
+/plumber-yuexiu  /plumber-yuexiu.html  301!
+/plumber-haizhu  /plumber-haizhu.html  301!
+/plumber-panyu  /plumber-panyu.html  301!
+/blog-plumber-cost-guangzhou  /blog-plumber-cost-guangzhou.html  301!
+/blog-emergency-plumber-guangzhou  /blog-emergency-plumber-guangzhou.html  301!
+/blog-blocked-drain-guangzhou  /blog-blocked-drain-guangzhou.html  301!
