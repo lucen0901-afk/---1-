@@ -1,0 +1,18 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# 实景图文件名自带哈希，内容永不变化 → 可长期缓存
+/images/aadks*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 品牌图会随更新变化，用中等缓存
+/images/og-cover.png
+  Cache-Control: public, max-age=604800
+
+/images/logo-square.png
+  Cache-Control: public, max-age=604800
+
+/images/apple-touch-icon.png
+  Cache-Control: public, max-age=604800

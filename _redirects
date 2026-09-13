@@ -1,0 +1,12 @@
+# 301 重定向：消除 URL 重复
+# Netlify 默认让 /about 和 /about.html 都返回 200 且内容相同，
+# 同一内容两个地址会让搜索引擎无法判断正主，权重被摊薄。
+# canonical 与 sitemap 声明的都是 .html，所以把无后缀版本永久跳过去。
+# 末尾的 ! 表示强制生效（否则 Netlify 的 pretty-URLs 会先命中同名文件）。
+/about     /about.html     301!
+/services  /services.html  301!
+/listings  /listings.html  301!
+/contact   /contact.html   301!
+
+# 平台早期预览地址兜底
+/home      /               301!
