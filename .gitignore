@@ -1,0 +1,5 @@
+# macOS 系统文件
+.DS_Store
+
+# WorkBuddy 项目记忆与会话数据（不对外同步）
+.workbuddy/

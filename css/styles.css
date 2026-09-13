@@ -1643,6 +1643,13 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-md);
   color: var(--slate-600);
   transition: all var(--transition-fast);
+  /* allow <button> to render identically to <a> */
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .social-link:hover {
@@ -1769,7 +1776,8 @@ ul, ol { list-style: none; }
   gap: var(--space-sm);
 }
 
-.footer-social a {
+.footer-social a,
+.footer-social button {
   width: 36px;
   height: 36px;
   display: flex;
@@ -1779,9 +1787,16 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-sm);
   color: var(--slate-400);
   transition: all var(--transition-fast);
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.footer-social a:hover {
+.footer-social a:hover,
+.footer-social button:hover {
   background-color: var(--primary);
   color: var(--white);
 }
@@ -1959,4 +1974,58 @@ ul, ol { list-style: none; }
 .form-success.show {
   display: block;
   animation: fadeIn 0.3s ease-out;
+}
+
+.form-success a {
+  color: var(--success);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================
+   Social links — copy-to-clipboard (WeChat ID)
+   ============================================ */
+.social-hint {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+  margin-bottom: 0;
+}
+
+.social-hint strong { color: var(--slate-700); }
+
+/* WeChat ID button inside the dark contact info card */
+.contact-info-item .link-copy {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--transition-fast);
+}
+
+.contact-info-item .link-copy:hover { opacity: 0.7; }
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 9999;
+  padding: 0.75rem 1.125rem;
+  background-color: var(--slate-900);
+  color: var(--white);
+  font-size: 0.875rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
