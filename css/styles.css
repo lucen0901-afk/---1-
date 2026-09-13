@@ -2426,6 +2426,7 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-md);
 }
 
+.callout h2,
 .callout h3,
 .callout h4 {
   font-size: 1.0625rem;
@@ -2450,6 +2451,7 @@ ul, ol { list-style: none; }
   border-left-color: var(--accent);
 }
 
+.callout--dark h2,
 .callout--dark h3,
 .callout--dark h4,
 .callout--dark p,
