@@ -3,3 +3,69 @@
 # 不会因为 Publish directory 填错（如 dist / public）而部署失败。
 [build]
   publish = "."
+
+# ---------- 301 重定向：消除 URL 重复 ----------
+# Netlify 默认让 /about 和 /about.html 都返回 200 且内容相同，
+# 同一内容两个地址会让搜索引擎无法判断正主，权重被摊薄。
+# canonical 与 sitemap 声明的都是 .html，所以把无后缀版本永久跳过去。
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/listings"
+  to = "/listings.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+# 平台早期预览地址兜底
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+# ---------- 响应头 ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# 实景图文件名自带哈希，内容永不变化 → 可长期缓存
+[[headers]]
+  for = "/images/aadks*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 社交封面会随品牌更新，用中等缓存
+[[headers]]
+  for = "/images/og-cover.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/logo-square.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/apple-touch-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

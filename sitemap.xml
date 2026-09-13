@@ -3,22 +3,32 @@
 
     <url>
         <loc>https://guangzhouhomehelp.top/</loc>
+        <lastmod>2026-09-13</lastmod>
+        <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://guangzhouhomehelp.top/about.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://guangzhouhomehelp.top/services.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <priority>0.9</priority>
     </url>
 
     <url>
         <loc>https://guangzhouhomehelp.top/listings.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://guangzhouhomehelp.top/contact.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
